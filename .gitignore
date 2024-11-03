@@ -1,3 +1,4 @@
 dist/*
 __pycache__/*
 test*
+g_gantt.egg-info/*
