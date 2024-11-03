@@ -1,9 +1,4 @@
-# g-gantt
-
-[![PyPI - Version](https://img.shields.io/pypi/v/g-gantt.svg)](https://pypi.org/project/g-gantt)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/g-gantt.svg)](https://pypi.org/project/g-gantt)
-
------
+# g_gantt
 
 ## Table of Contents
 
@@ -13,9 +8,9 @@
 ## Installation
 
 ```console
-pip install g-gantt
+pip install g_gantt
 ```
 
 ## License
 
-`g-gantt` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`g_gantt` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
