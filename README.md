@@ -78,9 +78,9 @@ from datetime import date
 
 First initalize a chart object with your gantt chart title
 
-'''
+```
 chart = g_gantt.Chart("Example Chart Title")
-'''
+```
 
 ### Initatilzation
 To initalize a chart object the only input you need is your title!
