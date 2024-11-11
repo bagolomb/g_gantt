@@ -24,7 +24,7 @@ Import g_gantt and datetime for date()
 import g_gantt
 from datetime import datetime
 
-chart = Chart("Example Chart Title")
+chart = g_gantt.Chart("Example Chart Title")
 
 chart.add_task(
     task_id="T1",
@@ -73,13 +73,13 @@ chart.save('gantt_chart.html')
 To get started import g_gantt and import datetime for access to date()
 ```
 import g_gantt
-from datetime import datetime
+from datetime import date
 ```
 
 First initalize a chart object with your gantt chart title
 
 '''
-chart = Chart("Example Chart Title")
+chart = g_gantt.Chart("Example Chart Title")
 '''
 
 ### Initatilzation
@@ -92,13 +92,13 @@ chart = Chart("Example Chart Title")
 Tasks are added to a chart object with the add_task() function.
 There are many different valid input combinations, below are a few 
 
+Basic add_task with all fields defined, and laid out for readability
 ```
-#With all fields fully defined in long layout (recommended)
 chart.add_task(
     task_id="T2",
     task_label="Task 2", 
     resource="Resource 1",
-    start=None,
+    start=date(2024,10,1),
     end=None, 
     duration=1,
     dependencies="T1",
@@ -106,13 +106,13 @@ chart.add_task(
     )
 ```
 
+Task with inputs accepted in default order, and no spacing for readability (Not recommedned)
 ```
-#Default order fields in short layout (Not recommended)
 chart.add_task("T2","Task 2","Resource 1",date(2024,10,1),None,1,"T1",100)
 ```
 
+Task with only a duration (Easiest, and best for critical path)
 ```
-#with only duration
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -125,8 +125,8 @@ chart.add_task(
     )
 ```
 
+Task with a Start and an End date
 ```
-#with Start and End
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -138,8 +138,9 @@ chart.add_task(
     percent_complete=100,
     )
 ```
+
+Task with a Start Date and a Duration
 ```
-#with Start and Duration
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -151,8 +152,9 @@ chart.add_task(
     percent_complete=100,
     )
 ```
+
+Task with an End Date and a Duration
 ```
-#with End and Duration
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -165,8 +167,8 @@ chart.add_task(
     )
 ```
 
+Task with multiple dependencies
 ```
-#with multiple dependencies
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -179,8 +181,8 @@ chart.add_task(
     )
 ```
 
+Task with half a day as duration
 ```
-#with half a day
 chart.add_task(
     task_id="T1",
     task_label="Task 1", 
@@ -194,6 +196,7 @@ chart.add_task(
 ```
 
 ### Change Settings
+Below are all the settings availble to change a
 ```
 chart.set_background_color("B4B4B4")
 chart.set_dimensions(1500,1000)
@@ -213,19 +216,16 @@ chart.enable_sort_tasks(False) #True by default
 ```
 
 ### View and Save Chart
+To open the chart in your webbrowser
 ```
-# Open in webbrowser
-chart.show
+chart.show()
 ```
 
+To save the html
 ```
 # Save file
 chart.save('Filename.html')
 ```
-
-
-
-
 
 
 ## License

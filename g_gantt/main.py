@@ -38,7 +38,7 @@ class Chart:
                     "length": 8,
                     "radius": 15,
                     "spaceAfter": 4,
-                    "width": 2.5,
+                    "width": 5,
                 },
                 "barCornerRadius": 2,
                 "criticalPathEnabled": True,
