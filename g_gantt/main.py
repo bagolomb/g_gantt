@@ -41,7 +41,7 @@ class Chart:
                     "width": 2.5,
                 },
                 "barCornerRadius": 2,
-                "criticalPathEnabled": False,
+                "criticalPathEnabled": True,
                 "criticalPathStyle": {"stroke": "#e64a19", "strokeWidth": 5},
                 "innerGridHorizLine": {"stroke": "#ccc", "strokeWidth": 1},
                 "innerGridTrack": {"fill": "#f3f3f3"},
@@ -168,7 +168,7 @@ class Chart:
         """
         self.options["gantt"]["criticalPathEnabled"] = t_or_f
 
-    def set_arrows(self, angle:int=45, color:str="#000", length:int=8, radius:int=15, spaceAfter:int=4, width:int=2.5):
+    def set_arrows(self, angle:int=45, color:str="#000", length:int=8, radius:int=15, spaceAfter:int=4, width:float=1.4):
         """
         Set arrow options
 
@@ -178,7 +178,7 @@ class Chart:
             length (int): The length of the head of the arrow
             radius (int): The radius for defining the curve of the arrow between two tasks
             spaceAfter (int):The amount of whitespace between the head of an arrow and the task to which it points
-            width (int): The width of the arrows
+            width (float): The width of the arrows
         """
 
         self.options["gantt"]["arrow"]["angle"] = angle
@@ -214,6 +214,15 @@ class Chart:
             t_or_f (bool): Boolean representing state to set shadows to
         """
         self.options["gantt"]["shadowEnabled"] = t_or_f
+
+    def enable_sort_tasks(self, t_or_f:bool):
+        """
+        Enable/Disable Shadows
+
+        Args:
+            t_or_f (bool): Boolean representing state to sortTasks to
+        """
+        self.options["gantt"]["sortTasks"]= t_or_f
 
     def format_value(self, value, column_name=None):
         if value is None:
