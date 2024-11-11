@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "g_gantt"
-version = "0.1.6"
+version = "0.1.8"
 description = "A Pythonic way to make Gantt Charts based off the Google Chart Gantt Chart html/JS charting library"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -22,6 +22,10 @@ classifiers = [
 dependencies = [
   "datetime",
   ]
-  
+
 [tool.setuptools]
 packages = ["g_gantt"]
+
+[tool.setuptools.exclude-package-data]
+"g_gantt" = ["test.py"]
+
